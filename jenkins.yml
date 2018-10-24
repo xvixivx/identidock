@@ -1,21 +1,24 @@
-identidock:
-  build: .
-  expose:
-    - "9090"
-  environment:
-    ENV: PROD
+version: '3.3'
+
+services:
+  identidock:
+    build: .
+    expose:
+      - "9090"
+    environment:
+      ENV: PROD
+      networks:
+        - identidock-network
+
+  dnmonster:
+    image: amouat/dnmonster:1.0
     networks:
-      - identidock-network
+        - identidock-network
 
-dnmonster:
-  image: amouat/dnmonster:1.0
-  networks:
-      - identidock-network
-
-redis:
-  image: redis:3.0
-  networks:
-      - identidock-network
+  redis:
+    image: redis:3.0
+    networks:
+        - identidock-network
 
 networks:
   identidock-network:
