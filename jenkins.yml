@@ -7,8 +7,8 @@ services:
       - "9090"
     environment:
       ENV: PROD
-      networks:
-        - identidock-network
+    networks:
+      - identidock-network
 
   dnmonster:
     image: amouat/dnmonster
