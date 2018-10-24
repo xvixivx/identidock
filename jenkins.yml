@@ -11,12 +11,12 @@ services:
         - identidock-network
 
   dnmonster:
-    image: amouat/dnmonster:1.0
+    image: amouat/dnmonster
     networks:
         - identidock-network
 
   redis:
-    image: redis:3.0
+    image: redis
     networks:
         - identidock-network
 
